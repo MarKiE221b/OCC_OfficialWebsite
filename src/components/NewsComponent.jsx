@@ -7,13 +7,12 @@ import newsPic03 from "/480641552_122098909280780727_97071336431614504_n.jpg";
 
 const NewsComponent = () => {
   return (
-    <div className="flex flex-col py-20">
+    <div className="py-20">
       <h1 className="text-4xl font-bold">Latest News!</h1>
       <div className="divider"></div>
-
       {/* latest news */}
-      <div className="flex justify-center">
-        <div className="card bg-base-100 w-[1000px] shadow-xl">
+      <div className="flex flex-col items-center">
+        <div className="card bg-base-100 max-w-[1000px] shadow-xl">
           <div className="card-image relative">
             <img
               src={newsPic}
@@ -29,7 +28,7 @@ const NewsComponent = () => {
               rel="noopener noreferrer"
             >
               <motion.h2
-                className="card-title text-white pb-5 cursor-pointer hover:underline"
+                className="card-title text-white pb-5 cursor-pointer hover:underline text-base"
                 whileHover={{
                   scale: 1.01, // Slightly increase the size of the card on hover
                   y: -5, // Elevate the card by 10px on hover
@@ -43,25 +42,22 @@ const NewsComponent = () => {
             </a>
           </div>
         </div>
-      </div>
 
-      {/* previous news */}
+        {/* previous news */}
 
-      <div className="carousel carousel-center rounded-box space-x-4 py-10 px-4 mt-5">
-        {/* 1 */}
-        <div className="carousel-item">
-          <a
-            href="https://www.facebook.com/share/p/1QLgNFSSyJ/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <motion.div
+        <div className="carousel carousel-center rounded-box max-w-full space-x-4 p-8 mt-5">
+          {/* 1 */}
+          <div className="carousel-item">
+            <motion.a
               className="card bg-base-100 w-96 shadow-xl cursor-pointer"
               whileHover={{
                 scale: 1.05, // Slightly increase the size of the card on hover
                 y: -10, // Elevate the card by 10px on hover
                 transition: { duration: 0.3 }, // Smooth transition duration
               }}
+              href="https://www.facebook.com/share/p/1QLgNFSSyJ/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <figure>
                 <img src={newsPic01} alt="" />
@@ -72,16 +68,10 @@ const NewsComponent = () => {
                 </h2>
                 <div className="card-actions justify-end"></div>
               </div>
-            </motion.div>
-          </a>
-        </div>
-        {/* 2 */}
-        <div className="carousel-item">
-          <a
-            href="https://www.facebook.com/share/p/1A4YePeiGB/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+            </motion.a>
+          </div>
+          {/* 2 */}
+          <div className="carousel-item">
             <motion.div
               className="card bg-base-100 w-96 shadow-xl cursor-pointer"
               whileHover={{
@@ -89,6 +79,9 @@ const NewsComponent = () => {
                 y: -10, // Elevate the card by 10px on hover
                 transition: { duration: 0.3 }, // Smooth transition duration
               }}
+              href="https://www.facebook.com/share/p/1A4YePeiGB/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <figure>
                 <img src={newsPic02} alt="" />
@@ -98,15 +91,9 @@ const NewsComponent = () => {
                 <div className="card-actions justify-end"></div>
               </div>
             </motion.div>
-          </a>
-        </div>
-        {/* 3 */}
-        <div className="carousel-item">
-          <a
-            href="https://www.facebook.com/share/p/18VDzUnBjt/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </div>
+          {/* 3 */}
+          <div className="carousel-item">
             <motion.div
               className="card bg-base-100 w-96 shadow-xl cursor-pointer"
               whileHover={{
@@ -114,6 +101,9 @@ const NewsComponent = () => {
                 y: -10, // Elevate the card by 10px on hover
                 transition: { duration: 0.3 }, // Smooth transition duration
               }}
+              href="https://www.facebook.com/share/p/18VDzUnBjt/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <figure>
                 <img src={newsPic03} alt="First Board Meeting" />
@@ -125,7 +115,7 @@ const NewsComponent = () => {
                 </div>
               </div>
             </motion.div>
-          </a>
+          </div>
         </div>
       </div>
     </div>

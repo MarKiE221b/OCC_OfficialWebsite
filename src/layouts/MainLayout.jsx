@@ -19,7 +19,7 @@ const MainLayout = () => {
           </div>
 
           {/* body */}
-          <div className="container mx-auto px-10">
+          <div className="px-5">
             <section id="home">
               <HeroComponent />
             </section>
