@@ -72,7 +72,7 @@ const NewsComponent = () => {
           </div>
           {/* 2 */}
           <div className="carousel-item">
-            <motion.div
+            <motion.a
               className="card bg-base-100 w-96 shadow-xl cursor-pointer"
               whileHover={{
                 scale: 1.05, // Slightly increase the size of the card on hover
@@ -90,11 +90,11 @@ const NewsComponent = () => {
                 <h2 className="card-title">Official Oath Taking.</h2>
                 <div className="card-actions justify-end"></div>
               </div>
-            </motion.div>
+            </motion.a>
           </div>
           {/* 3 */}
           <div className="carousel-item">
-            <motion.div
+            <motion.a
               className="card bg-base-100 w-96 shadow-xl cursor-pointer"
               whileHover={{
                 scale: 1.05, // Slightly increase the size of the card on hover
@@ -114,7 +114,7 @@ const NewsComponent = () => {
                   {/* Add any actions here if needed */}
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           </div>
         </div>
       </div>
