@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar.jsx";
 import HeroComponent from "../components/HeroComponent.jsx";
 import NewsComponent from "../components/NewsComponent.jsx";
+import Members from "../components/Members.jsx";
+import { Outlet, useLocation } from "react-router";
 
 const MainLayout = () => {
+  const location = useLocation();
+  const isIdRoute = /\/[^/]+$/.test(location.pathname);
+
   const [loading, setLoading] = useState(true);
 
   window.addEventListener("load", (e) => {
@@ -20,12 +25,21 @@ const MainLayout = () => {
 
           {/* body */}
           <div className="px-5">
-            <section id="home">
-              <HeroComponent />
-            </section>
-            <section id="news">
-              <NewsComponent />
-            </section>
+            {isIdRoute ? (
+              <Outlet />
+            ) : (
+              <>
+                <section id="home">
+                  <HeroComponent />
+                </section>
+                <section id="news">
+                  <NewsComponent />
+                </section>
+                <section id="members">
+                  <Members />
+                </section>
+              </>
+            )}
           </div>
         </>
       ) : (
