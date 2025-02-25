@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route path=":id" element={<Individual />} />
+          <Route path="/marc" element={<Individual />} />
         </Route>
         <Route path="*" element={<Errorpage />} />
       </Routes>

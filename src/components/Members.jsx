@@ -1,6 +1,9 @@
 import React from "react";
 import prof_sil from "/profile-sil.png";
 import woman_sil from "/femail-sil.png";
+import marc from "/basta.png";
+import albert from "/albert_basta.png"
+import { motion } from "motion/react";
 
 const Members = () => {
   return (
@@ -28,7 +31,7 @@ const Members = () => {
         <div className="flex flex-col lg:flex-row gap-4 items-center justify-evenly mt-10 p-6">
           <div className="card card-compact bg-base-100 w-96 shadow-xl">
             <figure>
-              <img src={prof_sil} alt="Shoes" />
+              <img src={albert} alt="Shoes" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">Albert Trinidad</h2>
@@ -78,18 +81,28 @@ const Members = () => {
               </div> */}
             </div>
           </div>
-          <div className="card card-compact bg-base-100 w-96 shadow-xl">
-            <figure>
-              <img src={prof_sil} alt="Shoes" />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">Marc Anthony Espiritu</h2>
-              <p>Project Technical Staff II</p>
-              {/* <div className="card-actions justify-end">
+          <motion.a
+            className="cursor-pointer"
+            whileHover={{
+              scale: 1.05, // Slightly increase the size of the card on hover
+              y: -10, // Elevate the card by 10px on hover
+              transition: { duration: 0.3 }, // Smooth transition duration
+            }}
+            href="/marc"
+          >
+            <div className="card card-compact bg-base-100 w-96 shadow-xl">
+              <figure>
+                <img src={marc} alt="Shoes" />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Marc Anthony Espiritu</h2>
+                <p>Project Technical Staff II</p>
+                {/* <div className="card-actions justify-end">
                 <button className="btn btn-primary">Buy Now</button>
               </div> */}
+              </div>
             </div>
-          </div>
+          </motion.a>
         </div>
       </div>
     </div>
