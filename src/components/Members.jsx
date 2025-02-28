@@ -31,7 +31,7 @@ const Members = () => {
         <div className="flex flex-col lg:flex-row gap-4 items-center justify-evenly mt-10 p-6">
           <div className="card card-compact bg-base-100 w-96 shadow-xl">
             <figure>
-              <img src={albert} alt="Shoes" />
+              <img src={prof_sil} alt="Shoes" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">Albert Trinidad</h2>
@@ -92,7 +92,7 @@ const Members = () => {
           >
             <div className="card card-compact bg-base-100 w-96 shadow-xl">
               <figure>
-                <img src={marc} alt="Shoes" />
+                <img src={prof_sil} alt="Shoes" />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">Marc Anthony Espiritu</h2>
