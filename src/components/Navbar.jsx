@@ -32,9 +32,9 @@ const Navbar = () => {
             <a href="/#news">News</a>
           </li>
 
-          <li>
+          {/* <li>
             <a href="/#members">Members</a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

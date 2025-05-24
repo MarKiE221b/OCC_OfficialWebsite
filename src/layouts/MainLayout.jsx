@@ -35,9 +35,9 @@ const MainLayout = () => {
                 <section id="news">
                   <NewsComponent />
                 </section>
-                <section id="members">
+                {/* <section id="members">
                   <Members />
-                </section>
+                </section> */}
               </>
             )}
           </div>
