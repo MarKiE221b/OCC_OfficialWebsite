@@ -50,6 +50,10 @@ const NewsComponent = () => {
       : text;
   };
 
+  const base64ToImageSrc = (base64String) => {
+    return base64String ? `data:image/jpeg;base64,${base64String}` : "";
+  };
+
   return (
     <div className="py-20">
       <h1 className="text-4xl font-bold text-center">Latest News!</h1>
@@ -61,7 +65,7 @@ const NewsComponent = () => {
           <div className="card bg-base-100 max-w-[1000px] shadow-xl">
             <div className="card-image relative">
               <img
-                src={`${import.meta.env.VITE_API_URL}/${news.latest?.coverPhoto}`}
+                src={base64ToImageSrc(news.latest?.coverPhotoBase64)}
                 alt="News"
                 className="w-full h-[530px] object-cover"
               />
@@ -88,45 +92,43 @@ const NewsComponent = () => {
         )}
 
         <div className="carousel carousel-center rounded-box max-w-full p-8 mt-10 gap-6">
-          {isLoading ? (
-            Array(3)
-              .fill()
-              .map((_, i) => <NewsCardSkeleton key={i} />)
-          ) : (
-            news.archive?.map((item, index) => (
-              <div className="carousel-item" key={index}>
-                <motion.div
-                  className="card bg-base-100 w-96 shadow-xl"
-                  whileHover={{ scale: 1.03 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <figure className="relative h-48">
-                    <img
-                      src={`${import.meta.env.VITE_API_URL}/${item.coverPhoto}`}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title text-lg">{item.title}</h2>
-                    <p className="text-sm text-gray-600">
-                      {truncateText(item.description, 100)}
-                    </p>
-                    <div className="card-actions justify-end mt-4">
-                      <a
-                        href={item.fbLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-primary btn-sm"
-                      >
-                        Read More
-                      </a>
+          {isLoading
+            ? Array(3)
+                .fill()
+                .map((_, i) => <NewsCardSkeleton key={i} />)
+            : news.archive?.map((item, index) => (
+                <div className="carousel-item" key={index}>
+                  <motion.div
+                    className="card bg-base-100 w-96 shadow-xl"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <figure className="relative h-48">
+                      <img
+                        src={base64ToImageSrc(item.coverPhotoBase64)}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </figure>
+                    <div className="card-body">
+                      <h2 className="card-title text-lg">{item.title}</h2>
+                      <p className="text-sm text-gray-600">
+                        {truncateText(item.description, 100)}
+                      </p>
+                      <div className="card-actions justify-end mt-4">
+                        <a
+                          href={item.fbLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-primary btn-sm"
+                        >
+                          Read More
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              </div>
-            ))
-          )}
+                  </motion.div>
+                </div>
+              ))}
         </div>
       </div>
     </div>
