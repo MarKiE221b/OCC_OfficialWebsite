@@ -65,7 +65,7 @@ const NewsComponent = () => {
           <div className="card bg-base-100 max-w-[1000px] shadow-xl">
             <div className="card-image relative">
               <img
-                src={base64ToImageSrc(news.latest?.coverPhotoBase64)}
+                src={news.latest?.coverPhotoUrl}
                 alt="News"
                 className="w-full h-[530px] object-cover"
               />

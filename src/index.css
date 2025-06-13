@@ -6,7 +6,25 @@ html {
   scroll-behavior: smooth;
 }
 
+@layer base {
+  body {
+    @apply bg-base-100 text-base-content;
+  }
+}
+
 @layer components {
+  .btn {
+    @apply transition-all duration-200;
+  }
+  
+  .card {
+    @apply transition-all duration-200;
+  }
+  
+  .navbar {
+    @apply transition-all duration-200;
+  }
+  
   .loading-wrapper {
     @apply w-full h-full fixed top-0 left-0 grid items-center transition-all delay-300;
   }
@@ -14,4 +32,36 @@ html {
   .loading {
     @apply animate-spin border-8 rounded-full border-solid border-neutral w-[140px] h-[140px] transition-all delay-300;
   }
+
+  .school-logo-container {
+    @apply relative overflow-hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+  }
+
+  .bg-primary-dark {
+    @apply bg-primary/90;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-base-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
 }

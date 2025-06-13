@@ -12,4 +12,16 @@ export default {
     },
   },
   plugins: [daisyui],
+  daisyui: {
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["light"],
+          primary: "#1d4ed8",
+          secondary: "#4f46e5",
+          accent: "#0ea5e9",
+        },
+      },
+    ],
+  },
 };
