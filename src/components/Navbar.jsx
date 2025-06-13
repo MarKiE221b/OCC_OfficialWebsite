@@ -27,7 +27,7 @@ const Navbar = () => {
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
-          {["Home", "News", "Videos", "Schools"].map((item, index) => (
+          {["Home", "News", "Schools"].map((item, index) => (
             <motion.li
               key={item}
               whileHover={{ scale: 1.1 }}
