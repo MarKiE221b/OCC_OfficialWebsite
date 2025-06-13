@@ -105,7 +105,7 @@ const NewsComponent = () => {
                   >
                     <figure className="relative h-48">
                       <img
-                        src={base64ToImageSrc(item.coverPhotoBase64)}
+                        src={news.latest?.coverPhotoUrl}
                         alt={item.title}
                         className="w-full h-full object-cover"
                       />
