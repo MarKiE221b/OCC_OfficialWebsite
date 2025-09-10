@@ -4,21 +4,21 @@ import chedLogo from "../assets/Commission_on_Higher_Education_(CHEd).svg.png";
 
 const Navbar = () => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100 }}
       className="navbar bg-base-100/80 backdrop-blur-md shadow-sm"
     >
       <div className="flex-1 gap-2">
-        <motion.img 
+        <motion.img
           whileHover={{ rotate: 360 }}
           transition={{ duration: 0.5 }}
-          src={chedLogo} 
-          className="h-10 w-10" 
+          src={chedLogo}
+          className="h-10 w-10"
           alt="CHED Logo"
         />
-        <motion.h1 
+        <motion.h1
           className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
           whileHover={{ scale: 1.05 }}
         >
@@ -27,20 +27,28 @@ const Navbar = () => {
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
-          {["Home", "News", "Schools"].map((item, index) => (
-            <motion.li
-              key={item}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <a 
-                href={`/#${item.toLowerCase()}`}
-                className="font-medium"
+          {["Home", "OCDRA Systems", "News", "Schools", "Appointment"].map(
+            (item, index) => (
+              <motion.li
+                key={item}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {item}
-              </a>
-            </motion.li>
-          ))}
+                <a
+                  href={
+                    item === "Appointment"
+                      ? "/appointment"
+                      : item === "OCDRA Systems"
+                      ? "/systems"
+                      : `/#${item.toLowerCase()}`
+                  }
+                  className="font-medium"
+                >
+                  {item}
+                </a>
+              </motion.li>
+            )
+          )}
         </ul>
       </div>
     </motion.div>

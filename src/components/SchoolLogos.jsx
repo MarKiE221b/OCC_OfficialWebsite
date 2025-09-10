@@ -5,11 +5,11 @@ const SchoolLogos = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const schools = [
-    {
-      id: 1,
-      name: `Eulogio "Amang" Rodriguez Institute of Science and Technology`,
-      logo: "/earist-logo-1.png",
-    },
+    // {
+    //   id: 1,
+    //   name: `Eulogio "Amang" Rodriguez Institute of Science and Technology`,
+    //   logo: "/earist-logo-1.png",
+    // },
     {
       id: 2,
       name: "Aurora State College of Technology",
@@ -81,7 +81,7 @@ const SchoolLogos = () => {
       name: "Bukidnon State University",
       logo: "/buksu-logo-min-1024x1024.png",
     },
-    { id: 17, name: "Davao del Sur State College", logo: "/dssc_logo.png" },
+    // { id: 17, name: "Davao del Sur State College", logo: "/dssc_logo.png" },
     {
       id: 18,
       name: "Cotabato State University",
@@ -95,7 +95,7 @@ const SchoolLogos = () => {
     { id: 20, name: "South Cotabato State College", logo: "/scsc_logo.png" },
     { id: 21, name: "Sultan Kudarat State University", logo: "/sksu1.png" },
     { id: 22, name: "Basilan State College", logo: "/Basilan_Logo.png" },
-    { id: 23, name: "Davao de Oro State College", logo: "/DdOSC.png" },
+    // { id: 23, name: "Davao de Oro State College", logo: "/DdOSC.png" },
     {
       id: 24,
       name: "University of Southern Mindanao",
@@ -138,7 +138,7 @@ const SchoolLogos = () => {
           SUCs Under Commissioner Apag III
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:max-w-full max-w-7xl  gap-8  mx-auto">
           {schools.map((school, index) => (
             <motion.div
               key={school.id}

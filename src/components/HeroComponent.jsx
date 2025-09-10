@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import commPicture from "/D72_3714_White.jpg";
+import commPicture from "/comm_pic.png";
 
 const HeroComponent = () => {
   return (
@@ -8,8 +8,12 @@ const HeroComponent = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="hero bg-base-100 min-h-screen py-12"
+      className="hero bg-base-100 min-h-screen py-12 relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden"
     >
+
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-[linear-gradient(30deg,#000000_12%,transparent_12.5%,transparent_87%,#000000_87.5%,#000000),linear-gradient(150deg,#000000_12%,transparent_12.5%,transparent_87%,#000000_87.5%,#000000),linear-gradient(30deg,#000000_12%,transparent_12.5%,transparent_87%,#000000_87.5%,#000000),linear-gradient(150deg,#000000_12%,transparent_12.5%,transparent_87%,#000000_87.5%,#000000),linear-gradient(60deg,#00000077_25%,transparent_25.5%,transparent_75%,#00000077_75%,#00000077)] bg-[length:80px_140px]"></div>
+      </div>
       <div className="hero-content flex-col items-center justify-center lg:flex-row gap-12">
         <motion.img 
           initial={{ x: -100, opacity: 0 }}
@@ -32,7 +36,7 @@ const HeroComponent = () => {
             Mabuhay!
           </motion.h1>
           <h1 className="text-3xl">
-            Welcome to the Office of The Commissioner{" "}
+            Welcome to the Office of Commissioner{" "}
             <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
               Desiderio R. Apag III
             </span>

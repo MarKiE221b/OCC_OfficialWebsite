@@ -7,6 +7,7 @@ import SchoolLogos from "../components/SchoolLogos.jsx";
 import VideoSection from "../components/VideoSection.jsx";
 import Footer from "../components/Footer.jsx";
 import { Outlet, useLocation } from "react-router";
+import Appointment from "../components/Appointment.jsx";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -41,7 +42,7 @@ const MainLayout = () => {
           <div className="fixed top-0 w-full z-[100]">
             <Navbar />
           </div>
-          <div className="px-5">
+          <div className="">
             {isIdRoute ? (
               <Outlet />
             ) : (
@@ -53,6 +54,7 @@ const MainLayout = () => {
                 <section id="home">
                   <HeroComponent />
                 </section>
+
                 <section id="news">
                   <NewsComponent />
                 </section>
