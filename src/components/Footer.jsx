@@ -7,6 +7,128 @@ import chedLogo from "../assets/Commission_on_Higher_Education_(CHEd).svg.png";
 const Footer = () => {
   return (
     <footer className="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+      {/* Christmas Footer Decorations */}
+      <div className="absolute inset-0 pointer-events-none z-10">
+        {/* Christmas Lights String at Top */}
+        <div className="absolute top-0 left-0 right-0 flex justify-around">
+          {[...Array(25)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="w-3 h-3 rounded-full"
+              style={{
+                backgroundColor: ["#ef4444", "#22c55e", "#fbbf24", "#3b82f6", "#ec4899"][i % 5],
+              }}
+              animate={{
+                opacity: [0.3, 1, 0.3],
+                scale: [0.8, 1.3, 0.8],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: i * 0.06,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Falling Snowflakes in Footer */}
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={`snow-${i}`}
+            className="absolute text-white text-2xl"
+            style={{
+              left: `${Math.random() * 100}%`,
+              fontSize: `${10 + Math.random() * 15}px`,
+            }}
+            initial={{ top: -20, opacity: 0.7 }}
+            animate={{
+              top: "100%",
+              opacity: [0.7, 1, 0.3],
+            }}
+            transition={{
+              duration: 8 + Math.random() * 5,
+              repeat: Infinity,
+              delay: Math.random() * 4,
+              ease: "linear",
+            }}
+          >
+            ❄
+          </motion.div>
+        ))}
+
+        {/* Corner Christmas Trees */}
+        <motion.div
+          className="absolute top-8 left-4 text-6xl"
+          animate={{
+            rotate: [0, 5, -5, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+          }}
+        >
+          🎄
+        </motion.div>
+
+        <motion.div
+          className="absolute top-8 right-4 text-6xl"
+          animate={{
+            rotate: [0, -5, 5, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: 0.5,
+          }}
+        >
+          🎄
+        </motion.div>
+
+        {/* Santa and Gifts */}
+        <motion.div
+          className="absolute bottom-8 left-1/4 text-5xl"
+          animate={{
+            y: [0, -10, 0],
+            rotate: [0, 10, -10, 0],
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+          }}
+        >
+          🎅
+        </motion.div>
+
+        <motion.div
+          className="absolute bottom-8 right-1/4 text-4xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+          }}
+        >
+          🎁
+        </motion.div>
+
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 text-4xl"
+          animate={{
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+          }}
+        >
+          ⭐
+        </motion.div>
+      </div>
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[linear-gradient(30deg,#000000_12%,transparent_12.5%,transparent_87%,#000000_87.5%,#000000),linear-gradient(150deg,#000000_12%,transparent_12.5%,transparent_87%,#000000_87.5%,#000000),linear-gradient(30deg,#000000_12%,transparent_12.5%,transparent_87%,#000000_87.5%,#000000),linear-gradient(150deg,#000000_12%,transparent_12.5%,transparent_87%,#000000_87.5%,#000000),linear-gradient(60deg,#00000077_25%,transparent_25.5%,transparent_75%,#00000077_75%,#00000077)] bg-[length:80px_140px]"></div>
