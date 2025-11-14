@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import commPicture from "/commPhoto.png";
+import commPicture_Santa from "/commPhoto_Santa.png";
 
 const HeroComponent = () => {
   const [bibleVerse, setBibleVerse] = useState({
@@ -26,12 +27,12 @@ const HeroComponent = () => {
       "Isaiah 40:31",
       "Romans 15:13",
       "John 16:33",
-      "Proverbs 16:3"
+      "Proverbs 16:3",
     ];
 
     // Select a random verse reference
     const randomRef = lifeVerses[Math.floor(Math.random() * lifeVerses.length)];
-    
+
     // Fetch the verse from the API
     fetch(`https://bible-api.com/${encodeURIComponent(randomRef)}`)
       .then((response) => response.json())
@@ -69,28 +70,35 @@ const HeroComponent = () => {
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          src={commPicture}
+          src={commPicture_Santa}
           className="lg:max-w-xl hover:scale-105 transition-transform duration-300"
           alt="Commissioner"
         />
 
-        
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="space-y-6"
         >
+          {/* Christmas Greeting */}
           <motion.h1
-            className="text-6xl font-bold"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            className="text-nowrap text-6xl md:text-7xl font-bold text-white"
+            style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
+            animate={{
+              scale: [1, 1.02, 1],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+            }}
           >
-            Maayong Adlaw!
+            🎄 Happy Holidays! 🎅
           </motion.h1>
+
           <h1 className="text-3xl">
             Welcome to the Office of Commissioner{" "}
-            <span className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-200">
+            <span className="text-nowrap  text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-200">
               Desiderio R. Apag III
             </span>
           </h1>
